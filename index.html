@@ -1,0 +1,61 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+         <title>vue js</title>
+    </head>
+    <body>
+
+
+       
+
+    <div id="app" class="container">
+           
+        <div class="row">
+            
+        <div class="card col-md-5 mt-5 offset-4 ">
+            <h2 class="card-title bg-info text-light">Bazar list</h2>
+            <form @submit.prevent="addItem">
+                Add Item :<input v-model="newItem" class="form-control" type="text">
+               
+            </form>
+         <ul class="list-group mt-4 ">
+             <li v-for="(item, index) in items" :key="index" class='list-group-item  '>
+                 <button class="btn btn-danger" @click="removeItem(index)" >Remove</button>
+                 {{ item.name }} - <input type="text" v-model="item.price" />
+             </li>
+             <li class="list-group list-inline ml-5" >Total Amount =  {{ total }}</li>
+         </ul>
+         <!-- <table>
+             <th>item</th>
+             <th>price</th>
+             <tr>
+                 <td  v-for="item in items" >
+                     {{ item.name }}
+                 </td>
+                 <td  v-for="item in items" >
+                        {{ item.item }}
+                    </td>
+             </tr>
+         </table> -->
+        </div>
+    </div>
+
+    <button class="btn btn-success float-right  " onclick="window.print();">Print</button>
+    <a href="" type="reset" class="btn btn-warning ">Reset the form!</a>
+    </div>
+    
+       
+
+
+        <script src="js/app.js"></script>
+    
+    
+    </body>
+    </html>
